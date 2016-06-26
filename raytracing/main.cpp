@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
                 col += color(r, world);
             }
             col /= float(ns);
-            
+            col = vec3(sqrtf(col.r()), sqrtf(col.g()), sqrtf(col.b()));
             int ir = int(255.99 * col.r());
             int ig = int(255.99 * col.g());
             int ib = int(255.99 * col.b());
