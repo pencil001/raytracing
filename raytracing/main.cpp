@@ -22,7 +22,7 @@ vec3 random_in_unit_sphere() {
 
 vec3 color(const ray& r, hitable *world) {
     hit_record rec;
-    if (world->hit(r, 0.0, MAXFLOAT, rec)) {
+    if (world->hit(r, 0.001, MAXFLOAT, rec)) {
         // 以p + n为圆心，random点可以看做新园的法向量N
         // 则新的hitpoint = p + n + N
         vec3 target = rec.p + rec.normal + random_in_unit_sphere();
